@@ -18,19 +18,27 @@
                      tools:ignore="MockLocation"/>
 
     <application
+        tools:replace="android:theme"
         android:allowBackup="true"
         android:icon="@drawable/gpsloggericon3"
         android:label="@string/app_name"
         android:theme="@style/AppTheme"
-        android:name=".common.AppSettings"
+        android:name="com.mendhak.gpslogger.common.AppSettings"
         >
         <meta-data
             android:name="com.google.android.gms.version"
             android:value="@integer/google_play_services_version" />
 
-        <service android:name=".GpsLoggingService" >
+        <service android:name=".GpsLoggingService" android:exported="true">
             <intent-filter>
                 <action android:name="com.mendhak.gpslogger.GpsLoggingService" />
+            </intent-filter>
+        </service>
+
+        <service android:name=".AndroidWearListenerService">
+            <intent-filter>
+                <action android:name="com.google.android.gms.wearable.BIND_LISTENER" />
+
             </intent-filter>
         </service>
 
@@ -41,11 +49,15 @@
             android:launchMode="singleTask"
             android:uiOptions="splitActionBarWhenNarrow"
             android:windowSoftInputMode="adjustNothing"
+            android:clearTaskOnLaunch="true"
+            android:exported="true"
             >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
+            <meta-data android:name="android.app.shortcuts"
+                android:resource="@xml/shortcuts" />
         </activity>
         <activity
             android:name=".MainPreferenceActivity"
@@ -74,7 +86,7 @@
         </activity>
 
         <activity
-            android:name="com.dropbox.client2.android.AuthActivity"
+            android:name="com.dropbox.core.android.AuthActivity"
             android:configChanges="orientation|keyboard"
             android:launchMode="singleTask"
             android:parentActivityName=".GpsMainActivity" >
@@ -96,7 +108,7 @@
 
         <activity
             android:name=".shortcuts.ShortcutCreate"
-            android:theme="@android:style/Theme.Translucent.NoTitleBar" >
+            android:theme="@style/Theme.AppCompat.Translucent" >
             <intent-filter>
                 <action android:name="android.intent.action.CREATE_SHORTCUT" />
 
@@ -105,19 +117,28 @@
         </activity>
         <activity
             android:name=".shortcuts.ShortcutStart"
-            android:theme="@android:style/Theme.Translucent.NoTitleBar" >
+            android:theme="@style/Theme.AppCompat.Translucent" >
             <intent-filter>
                 <action android:name="android.intent.action.VIEW" />
             </intent-filter>
         </activity>
         <activity
             android:name=".shortcuts.ShortcutStop"
-            android:theme="@android:style/Theme.Translucent.NoTitleBar" >
+            android:theme="@style/Theme.AppCompat.Translucent" >
             <intent-filter>
                 <action android:name="android.intent.action.VIEW" />
             </intent-filter>
         </activity>
 
+        <activity
+            android:name="com.nononsenseapps.filepicker.FilePickerActivity"
+            android:label="@string/app_name"
+            android:theme="@style/FilePickerTheme">
+            <intent-filter>
+                <action android:name="android.intent.action.GET_CONTENT" />
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
 
         <receiver
             android:name=".StartupReceiver"
@@ -131,10 +152,17 @@
         </receiver>
         <receiver android:name=".senders.AlarmReceiver" />
 
+        <receiver android:name=".MyPackageUpgradeReceiver">
+            <intent-filter>
+                <action android:name="android.intent.action.MY_PACKAGE_REPLACED" />
+            </intent-filter>
+        </receiver>
+
+        <!--android:theme="@style/Theme.AppCompat.Translucent"-->
         <activity
             android:name=".NotificationAnnotationActivity"
-            android:label="..."
-            android:theme="@android:style/Theme.Dialog"
+            android:label=""
+            android:theme="@style/Theme.AppCompat.Translucent"
             android:excludeFromRecents="true"
             >
             <intent-filter>
@@ -143,7 +171,8 @@
             </intent-filter>
         </activity>
 
-        <provider android:name=".common.ContentApi" android:authorities="com.mendhak.gpslogger" android:exported="true" />
+        <provider android:name=".common.ContentApi" android:authorities="com.mendhak.gpslogger" android:exported="true"
+                  tools:ignore="ExportedContentProvider"/>
 
     </application>
 

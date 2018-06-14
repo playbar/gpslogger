@@ -8,10 +8,10 @@
   <string name="could_not_write_to_file">No s\'ha pogut escriure a l\'arxiu</string>
   <string name="add_description">Afegir la descripció</string>
   <string name="letters_numbers">Tan sols pots utilitzar lletres i números</string>
-  <string name="menu_settings">Opcions</string>
   <string name="menu_annotate">Anotar</string>
   <string name="menu_share">Compartir</string>
   <string name="menu_exit">Sortir</string>
+  <!-- main form labels -->
   <string name="txt_latitude">Latitud:</string>
   <string name="txt_longitude">Longitud:</string>
   <string name="txt_altitude">Altitud:</string>
@@ -27,11 +27,11 @@
   <string name="summary_freq_every">Freqüència:</string>
   <string name="summary_freq_max">màxim</string>
   <string name="summary_dist">Distància:</string>
-  <string name="summary_dist_regardless">màxim</string>
   <string name="summary_current_filename">Arxiu:</string>
   <string name="sharing_location_only">Només ubicació</string>
   <string name="sharing_mylocation">La meva ubicació</string>
   <string name="sharing_via">Compartir via</string>
+  <!-- general -->
   <string name="foot">&#160;peu</string>
   <string name="feet">&#160;peus</string>
   <string name="meter">&#160;metre</string>
@@ -48,7 +48,7 @@
   <string name="kilometers_per_hour">&#160;km/h</string>
   <string name="unknown_direction">desconegut</string>
   <string name="sorry">Ho sento</string>
-  <string name="success">Sí!</string>
+  <string name="success">Èxit</string>
   <string name="direction_north">Nord</string>
   <string name="direction_northeast">Nord-Est</string>
   <string name="direction_east">Est</string>
@@ -65,36 +65,23 @@
   <string name="time_halfhour">½ hora</string>
   <string name="time_oneandhalfhours">1 hora i mitja</string>
   <string name="time_twoandhalfhours">2 hores i mitja</string>
+  <!-- Settings activity -->
   <string name="settings_distance_in_meters">Distància en metres</string>
   <string name="settings_enter_meters">Introdueixi metres (màx 9999)</string>
+  <!-- Settings -->
   <string name="pref_logging_title">Dades del registre</string>
   <string name="new_file_creation_onceaday">Un cop al dia</string>
   <string name="new_file_creation_everystart">Cada cop que iniciï</string>
   <string name="pref_performance_title">Rendiment</string>
   <string name="time_before_logging_dialog_title">Temps en segons</string>
   <string name="enabledisablegps_title">Activar/Desactivar GPS</string>
-  <string name="please_wait">Espera si us plau.</string>
-  <string name="autoemail_username">Nom d\'usuari</string>
-  <string name="autoemail_password">Contrasenya</string>
-  <string name="autoemail_port">Port</string>
-  <string name="autoemail_port_summary">Port de SMTP</string>
-  <string name="autoemail_ssl">Utilitzar SSL?</string>
-  <string name="autoemail_server">Servidor SMTP</string>
   <string name="autoemail_choosepreset">Proveïdor de correu</string>
-  <string name="autoemail_invalid_form">Dades invàlides</string>
   <string name="stopped">Aturat</string>
   <string name="osm_setup_title">OpenStreetMap</string>
   <string name="osm_lbl_authorize">Autoritzar aquest aplicació</string>
-  <string name="osm_upload">OpenStreetMap</string>
   <string name="osm_visibility">Visibilitat</string>
   <string name="osm_description">Descripció</string>
   <string name="dropbox_setup_title">Dropbox</string>
-  <string name="dropbox_authorize">Autoritza</string>
-  <string name="dropbox_unauthorize">Treure l\'autorització</string>
-  <string name="dropbox_upload">Dropbox</string>
   <string name="menu_upload">Carregar</string>
   <string name="gdocs_test_title">Càrrega de prova</string>
-  <string name="gdocs_testupload_error">No s\'ha pogut carregar l\'arxiu de prova</string>
-  <string name="gdocs_selectgoogleaccount">Selecciona un compte de Google</string>
-  <string name="email_upload">Envia per email un arxiu</string>
 </resources>
